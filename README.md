@@ -5,6 +5,7 @@
 # gfmt
 A use-anywhere, github-flavoured-markdown table generator.
 
+## Synopsis
 Where `example/simple.json` looks like this:
 ```
 [
@@ -18,7 +19,7 @@ Where `example/simple.json` looks like this:
 
 this command:
 ```
-$ cat example/simple.json |gfmt
+$ cat example/simple.json | gfmt
 ```
 
 produces this output:
@@ -32,7 +33,7 @@ produces this output:
 | 14 Jun 2015 | 110       |
 ```
 
-This command, piping cherry-picked fields from a github repo list into `gfmt` (via [array-tools](https://github.com/75lb/array-tools)):
+This command, piping cherry-picked fields (see [array-tools](https://github.com/75lb/array-tools)) from a github repo list into `gfmt`:
 ```
 $ curl -s "https://api.github.com/users/jsdoc2md/repos" \
 | array-tools pick name stargazers_count forks_count open_issues_count \
