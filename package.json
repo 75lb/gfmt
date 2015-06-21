@@ -1,15 +1,15 @@
 {
-  "name": "gfm-table",
+  "name": "gfmt",
   "author": "Lloyd Brookes <75pound@gmail.com>",
   "version": "0.0.0",
-  "description": "gfm-table",
-  "repository": "https://github.com/75lb/gfm-table.git",
+  "description": "gfmt",
+  "repository": "https://github.com/75lb/gfmt.git",
   "license": "MIT",
-  "main": "./lib/gfm-table.js",
+  "main": "./lib/gfmt.js",
   "bin": {
-    "gfm-table": "bin/cli.js"
+    "gfmt": "bin/cli.js"
   },
-  "keywords": [],
+  "keywords": [ "github", "gfm", "markdown", "table" ],
   "engines": {
     "node": ">=0.10.0"
   },

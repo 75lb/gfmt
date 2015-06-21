@@ -1,20 +1,20 @@
-[![view on npm](http://img.shields.io/npm/v/gfm-table.svg)](https://www.npmjs.org/package/gfm-table)
-[![npm module downloads per month](http://img.shields.io/npm/dm/gfm-table.svg)](https://www.npmjs.org/package/gfm-table)
-[![Build Status](https://travis-ci.org/75lb/gfm-table.svg?branch=master)](https://travis-ci.org/75lb/gfm-table)
-[![Dependency Status](https://david-dm.org/75lb/gfm-table.svg)](https://david-dm.org/75lb/gfm-table)
+[![view on npm](http://img.shields.io/npm/v/gfmt.svg)](https://www.npmjs.org/package/gfmt)
+[![npm module downloads per month](http://img.shields.io/npm/dm/gfmt.svg)](https://www.npmjs.org/package/gfmt)
+[![Build Status](https://travis-ci.org/75lb/gfmt.svg?branch=master)](https://travis-ci.org/75lb/gfmt)
+[![Dependency Status](https://david-dm.org/75lb/gfmt.svg)](https://david-dm.org/75lb/gfmt)
 
-<a name="module_gfm-table"></a>
-## gfm-table
+<a name="module_gfmt"></a>
+## gfmt
 
-* [gfm-table](#module_gfm-table)
-  * [GfmTable](#exp_module_gfm-table--GfmTable) ⏏
-    * [new GfmTable(input)](#new_module_gfm-table--GfmTable_new)
-    * [.getTable()](#module_gfm-table--GfmTable+getTable)
+* [gfmt](#module_gfmt)
+  * [GfmTable](#exp_module_gfmt--GfmTable) ⏏
+    * [new GfmTable(input)](#new_module_gfmt--GfmTable_new)
+    * [.getTable()](#module_gfmt--GfmTable+getTable)
 
-<a name="exp_module_gfm-table--GfmTable"></a>
+<a name="exp_module_gfmt--GfmTable"></a>
 ### GfmTable ⏏
 **Kind**: Exported class  
-<a name="new_module_gfm-table--GfmTable_new"></a>
+<a name="new_module_gfmt--GfmTable_new"></a>
 #### new GfmTable(input)
 Get a github-flavoured-markdown table instance
 
@@ -23,11 +23,11 @@ Get a github-flavoured-markdown table instance
 | --- | --- | --- |
 | input | <code>object</code> &#124; <code>Array.&lt;object&gt;</code> | the input data |
 
-<a name="module_gfm-table--GfmTable+getTable"></a>
+<a name="module_gfmt--GfmTable+getTable"></a>
 #### gfmTable.getTable()
 get the table
 
-**Kind**: instance method of <code>[GfmTable](#exp_module_gfm-table--GfmTable)</code>  
+**Kind**: instance method of <code>[GfmTable](#exp_module_gfmt--GfmTable)</code>  
 
 * * *
 
