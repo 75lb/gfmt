@@ -1,7 +1,7 @@
 {
   "name": "gfmt",
   "author": "Lloyd Brookes <75pound@gmail.com>",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A use-anywhere, github-flavoured-markdown table generator",
   "repository": "https://github.com/75lb/gfmt.git",
   "license": "MIT",
@@ -9,7 +9,12 @@
   "bin": {
     "gfmt": "bin/cli.js"
   },
-  "keywords": [ "github", "gfm", "markdown", "table" ],
+  "keywords": [
+    "github",
+    "gfm",
+    "markdown",
+    "table"
+  ],
   "engines": {
     "node": ">=0.10.0"
   },
