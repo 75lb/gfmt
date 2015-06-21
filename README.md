@@ -1,6 +1,5 @@
 [![view on npm](http://img.shields.io/npm/v/gfmt.svg)](https://www.npmjs.org/package/gfmt)
 [![npm module downloads per month](http://img.shields.io/npm/dm/gfmt.svg)](https://www.npmjs.org/package/gfmt)
-[![Build Status](https://travis-ci.org/75lb/gfmt.svg?branch=master)](https://travis-ci.org/75lb/gfmt)
 [![Dependency Status](https://david-dm.org/75lb/gfmt.svg)](https://david-dm.org/75lb/gfmt)
 
 # gfmt
@@ -69,11 +68,6 @@ As a command-line tool:
 $ npm install -g gfmt
 ```
 
-Using bower:
-```
-$ bower install gfmt --save
-```
-
 ## API Reference
 A use-anywhere, github-flavoured-markdown table generator.
 
@@ -81,7 +75,7 @@ A use-anywhere, github-flavoured-markdown table generator.
 * [gfmt](#module_gfmt)
   * [GfmTable](#exp_module_gfmt--GfmTable) ⏏
     * [new GfmTable(input)](#new_module_gfmt--GfmTable_new)
-    * [.getTable()](#module_gfmt--GfmTable+getTable)
+    * [.getTable()](#module_gfmt--GfmTable+getTable) ⇒ <code>string</code>
 
 <a name="exp_module_gfmt--GfmTable"></a>
 ### GfmTable ⏏
@@ -95,8 +89,27 @@ Get a github-flavoured-markdown table instance
 | --- | --- | --- |
 | input | <code>object</code> &#124; <code>Array.&lt;object&gt;</code> | the input data |
 
+**Example**  
+```js
+> gfmt = require("gfmt");
+> table = gfmt([
+    { "date": "10 Jun 2015", "downloads": 100 },
+    { "date": "11 Jun 2015", "downloads": 120 },
+    { "date": "12 Jun 2015", "downloads": 150 },
+    { "date": "13 Jun 2015", "downloads": 120 },
+    { "date": "14 Jun 2015", "downloads": 110 }
+])
+> console.log(table.getTable())
+| date        | downloads |
+| ----------- | --------- |
+| 10 Jun 2015 | 100       |
+| 11 Jun 2015 | 120       |
+| 12 Jun 2015 | 150       |
+| 13 Jun 2015 | 120       |
+| 14 Jun 2015 | 110       |
+```
 <a name="module_gfmt--GfmTable+getTable"></a>
-#### gfmTable.getTable()
+#### gfmTable.getTable() ⇒ <code>string</code>
 get the table
 
 **Kind**: instance method of <code>[GfmTable](#exp_module_gfmt--GfmTable)</code>  
