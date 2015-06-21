@@ -18,7 +18,7 @@ Where `example/simple.json` looks like this:
 ```
 
 this command:
-```
+```sh
 $ cat example/simple.json | gfmt
 ```
 
@@ -34,7 +34,7 @@ produces this output:
 ```
 
 This command, piping cherry-picked fields (see [array-tools](https://github.com/75lb/array-tools)) from a github repo list into `gfmt`:
-```
+```sh
 $ curl -s "https://api.github.com/users/jsdoc2md/repos" \
 | array-tools pick name stargazers_count forks_count open_issues_count \
 | gfmt
