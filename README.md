@@ -37,24 +37,26 @@ This command, piping cherry-picked fields (see [array-tools](https://github.com/
 ```sh
 $ curl -s "https://api.github.com/users/jsdoc2md/repos" \
 | array-tools pick name stargazers_count forks_count open_issues_count \
+| array-tools sortBy stargazers_count \
+| array-tools reverse \
 | gfmt
 ```
 
 produces this output:
 ```
-| name                    | forks_count | open_issues_count | stargazers_count |
-| ----------------------- | ----------- | ----------------- | ---------------- |
-| ddata                   | 1           | 1                 |                  |
-| dhtml                   |             |                   |                  |
-| dmd                     | 10          | 1                 | 11               |
-| dmd-bitbucket           | 1           |                   |                  |
-| dmd-locale-en-gb        |             |                   |                  |
-| dmd-plugin-example      | 1           |                   |                  |
-| grunt-jsdoc-to-markdown | 2           |                   | 10               |
-| gulp-jsdoc-to-markdown  |             |                   | 5                |
-| jsdoc                   | 1           |                   |                  |
-| jsdoc-parse             | 4           | 1                 | 18               |
-| jsdoc-to-markdown       | 12          | 6                 | 95               |
+| name                    | stargazers_count | forks_count | open_issues_count |
+| ----------------------- | ---------------- | ----------- | ----------------- |
+| jsdoc-to-markdown       | 95               | 12          | 6                 |
+| jsdoc-parse             | 18               | 4           | 1                 |
+| dmd                     | 11               | 10          | 1                 |
+| grunt-jsdoc-to-markdown | 10               | 2           |                   |
+| gulp-jsdoc-to-markdown  | 5                |             |                   |
+| dhtml                   |                  |             |                   |
+| dmd-locale-en-gb        |                  |             |                   |
+| dmd-bitbucket           |                  | 1           |                   |
+| jsdoc                   |                  | 1           |                   |
+| ddata                   |                  | 1           | 1                 |
+| dmd-plugin-example      |                  | 1           |                   |
 ```
 
 ## Install
