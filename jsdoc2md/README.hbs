@@ -1,9 +1,10 @@
 [![view on npm](http://img.shields.io/npm/v/gfmt.svg)](https://www.npmjs.org/package/gfmt)
 [![npm module downloads per month](http://img.shields.io/npm/dm/gfmt.svg)](https://www.npmjs.org/package/gfmt)
+[![Build Status](https://travis-ci.org/75lb/gfmt.svg?branch=master)](https://travis-ci.org/75lb/gfmt)
 [![Dependency Status](https://david-dm.org/75lb/gfmt.svg)](https://david-dm.org/75lb/gfmt)
 
 # gfmt
-A use-anywhere, github-flavoured-markdown table generator.
+A use-anywhere, github-flavoured-markdown table generator. Useful in markdown generators or for presenting table data in the terminal. 
 
 ## Synopsis
 Where `example/simple.json` looks like this:

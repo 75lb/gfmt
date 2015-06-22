@@ -2,7 +2,7 @@
   "name": "gfmt",
   "author": "Lloyd Brookes <75pound@gmail.com>",
   "version": "0.1.1",
-  "description": "A use-anywhere, github-flavoured-markdown table generator",
+  "description": "A use-anywhere, github-flavoured-markdown table generator. Useful in markdown generators or for presenting table data in the terminal.",
   "repository": "https://github.com/75lb/gfmt.git",
   "license": "MIT",
   "main": "./lib/gfmt.js",
@@ -13,7 +13,9 @@
     "github",
     "gfm",
     "markdown",
-    "table"
+    "table",
+    "terminal",
+    "ascii"
   ],
   "engines": {
     "node": ">=0.10.0"
@@ -29,6 +31,7 @@
     "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
   },
   "devDependencies": {
-    "jsdoc-to-markdown": "^1.1.1"
+    "jsdoc-to-markdown": "^1.1.1",
+    "tape": "^4.0.0"
   }
 }
