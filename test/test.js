@@ -20,3 +20,43 @@ test(".getTable()", function(t){
     t.strictEqual(result, expected);
     t.end();
 });
+
+test(".getTable() with empty column", function(t){
+    var result = gfmt([
+        { "name": "Lloyd", "age": undefined },
+        { "name": "Roger", "age": undefined },
+        { "name": "Amir", "age": undefined },
+        { "name": "Frank", "age": undefined },
+        { "name": "Amy", "age": undefined }
+    ]).getTable();
+    var expected = 
+"| name  |\n\
+| ----- |\n\
+| Lloyd |\n\
+| Roger |\n\
+| Amir  |\n\
+| Frank |\n\
+| Amy   |\n";
+    t.strictEqual(result, expected);
+    t.end(); 
+});
+
+test(".getTable() with empty column 2", function(t){
+    var result = gfmt([
+        { "name": "Lloyd", "age": null },
+        { "name": "Roger", "age": null },
+        { "name": "Amir", "age": null },
+        { "name": "Frank", "age": null },
+        { "name": "Amy", "age": null }
+    ]).getTable();
+    var expected = 
+"| name  |\n\
+| ----- |\n\
+| Lloyd |\n\
+| Roger |\n\
+| Amir  |\n\
+| Frank |\n\
+| Amy   |\n";
+    t.strictEqual(result, expected);
+    t.end(); 
+});
