@@ -1,10 +1,10 @@
 #!/usr/bin/env node
 "use strict";
 var gfmTable = require("../");
-var tr = require("transform-tools");
+var collectJson = require("collect-json");
 
 process.stdin
-    .pipe(tr.collectJson({ through: function(json){
+    .pipe(collectJson(function(json){
         return gfmTable(json).getTable();
-    }}))
+    }))
     .pipe(process.stdout);
