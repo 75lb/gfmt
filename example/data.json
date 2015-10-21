@@ -1,8 +1,8 @@
 {
     "columns": [
-        { "field": "date", "header": "Date" },
-        { "field": "empty", "header": "Empty" },
-        { "field": "downloads", "header": "Downloads" }
+        { "name": "date", "header": "Date" },
+        { "name": "empty", "header": "Empty" },
+        { "name": "downloads", "header": "Downloads" }
     ],
     "data": [
         { "date": "10 Jun 2015", "downloads": 100 },
