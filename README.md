@@ -35,6 +35,8 @@ produces this output:
 | 14 Jun 2015 | 110       |
 ```
 
+$ cat tmp/repos.json | jq 'map({name, stargazers_count, watchers_count, forks_count, open_issues_count}) | sort_by(.stargazers_count) | reverse' | gfmt
+
 This command, piping cherry-picked fields (see [array-tools](https://github.com/75lb/array-tools)) from a github repo list into `gfmt`:
 ```sh
 $ curl -s "https://api.github.com/users/jsdoc2md/repos" \
@@ -77,7 +79,7 @@ $ npm install -g gfmt
 A use-anywhere, github-flavoured-markdown table generator.
 
 <a name="exp_module_gfmt--gfmTable"></a>
-### gfmTable(data, columns) ⏏
+### gfmTable(data, [options]) ⏏
 Get a github-flavoured-markdown table instance
 
 **Kind**: Exported function  
@@ -85,7 +87,10 @@ Get a github-flavoured-markdown table instance
 | Param | Type | Description |
 | --- | --- | --- |
 | data | <code>object</code> &#124; <code>Array.&lt;object&gt;</code> | the input data |
-| columns | <code>Array.&lt;object&gt;</code> | column definitions |
+| [options] | <code>object</code> |  |
+| [options.columns] | <code>Array.&lt;object&gt;</code> | column definitions |
+| [options.wrap] | <code>boolean</code> | wrap to fit into width |
+| [options.width] | <code>boolean</code> | table width |
 
 **Example**  
 ```js

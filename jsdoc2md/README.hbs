@@ -35,6 +35,8 @@ produces this output:
 | 14 Jun 2015 | 110       |
 ```
 
+$ cat tmp/repos.json | jq 'map({name, stargazers_count, watchers_count, forks_count, open_issues_count}) | sort_by(.stargazers_count) | reverse' | gfmt
+
 This command, piping cherry-picked fields (see [array-tools](https://github.com/75lb/array-tools)) from a github repo list into `gfmt`:
 ```sh
 $ curl -s "https://api.github.com/users/jsdoc2md/repos" \
