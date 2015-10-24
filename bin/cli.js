@@ -6,7 +6,7 @@ var collectJson = require('collect-json')
 process.stdin
   .pipe(collectJson(function (json) {
     var options = {
-      wrap: true
+      wrap: false
     }
     if (Array.isArray(json)) {
       return gfmTable(json, options)
