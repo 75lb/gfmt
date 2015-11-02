@@ -15,3 +15,5 @@ test('gmft()', function (t) {
   t.strictEqual(result, expected)
   t.end()
 })
+
+/* test wrap option */
