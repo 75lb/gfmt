@@ -6,7 +6,7 @@ test('gmft()', function (t) {
   var result = gfmt(fixture)
   var expected =
 '| date        | downloads |\n\
-| ----------- | --------  |\n\
+| ----------- | --------- |\n\
 | 10 Jun 2015 | 100       |\n\
 | 11 Jun 2015 | 120       |\n\
 | 12 Jun 2015 | 150       |\n\
