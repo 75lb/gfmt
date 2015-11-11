@@ -40,25 +40,25 @@ $ cat tmp/repos.json | jq 'map({name, stargazers_count, watchers_count, forks_co
 This command, piping cherry-picked fields (see [array-tools](https://github.com/75lb/array-tools)) from a github repo list into `gfmt`:
 ```sh
 $ curl -s "https://api.github.com/users/jsdoc2md/repos" \
-| jq 'map({repo:.name, stars:.stargazers_count, watching:.watchers_count, forks:.forks_count, issues:.open_issues_count}) | sort_by(.stargazers_count) | reverse' \
+| jq 'map({repo:.name, stars:.stargazers_count, forks:.forks_count, issues:.open_issues_count}) | sort_by(.stargazers_count) | reverse' \
 | gfmt
 ```
 
 produces this output:
 ```
-| repo                    | stars | watching | forks | issues |
-| ----------------------- | ----- | -------- | ----- | ------ |
-| jsdoc-to-markdown       | 133   | 133      | 20    | 18     |
-| jsdoc-parse             | 26    | 26       | 8     | 4      |
-| jsdoc                   | 0     | 0        | 1     | 0      |
-| gulp-jsdoc-to-markdown  | 6     | 6        | 2     | 0      |
-| grunt-jsdoc-to-markdown | 12    | 12       | 2     | 1      |
-| ddata                   | 0     | 0        | 2     | 2      |
-| dmd-locale-en-gb        | 0     | 0        | 0     | 0      |
-| dmd-bitbucket           | 0     | 0        | 1     | 0      |
-| dmd                     | 13    | 13       | 10    | 5      |
-| dhtml                   | 0     | 0        | 0     | 0      |
-| dmd-plugin-example      | 0     | 0        | 1     | 0      |
+| repo                    | stars | forks | issues |
+| ----------------------- | ----- | ----- | ------ |
+| jsdoc-to-markdown       | 133   | 20    | 18     |
+| jsdoc-parse             | 26    | 8     | 4      |
+| jsdoc                   | 0     | 1     | 0      |
+| gulp-jsdoc-to-markdown  | 6     | 2     | 0      |
+| grunt-jsdoc-to-markdown | 12    | 2     | 1      |
+| ddata                   | 0     | 2     | 2      |
+| dmd-locale-en-gb        | 0     | 0     | 0      |
+| dmd-bitbucket           | 0     | 1     | 0      |
+| dmd                     | 13    | 10    | 5      |
+| dhtml                   | 0     | 0     | 0      |
+| dmd-plugin-example      | 0     | 1     | 0      |
 ```
 
 ## Install
@@ -73,7 +73,7 @@ As a command-line tool:
 $ npm install -g gfmt
 ```
 
-Run `gfmt --help` to see the command-line options. 
+Run `gfmt --help` to see the command-line options.
 
 ## API Reference
 A use-anywhere, github-flavoured-markdown table generator.
