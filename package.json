@@ -22,8 +22,8 @@
   },
   "dependencies": {
     "collect-json": "^1.0.0",
-    "column-layout": "^1.3.0",
-    "command-line-args": "^2.0.2",
+    "column-layout": "^2",
+    "command-line-args": "^2.1",
     "core-js": "^1.2.2",
     "deep-extend": "^0.4.0"
   },
