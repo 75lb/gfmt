@@ -1,10 +1,11 @@
 [![view on npm](http://img.shields.io/npm/v/gfmt.svg)](https://www.npmjs.org/package/gfmt)
-[![npm module downloads per month](http://img.shields.io/npm/dm/gfmt.svg)](https://www.npmjs.org/package/gfmt)
+[![npm module downloads](http://img.shields.io/npm/dt/gfmt.svg)](https://www.npmjs.org/package/gfmt)
 [![Build Status](https://travis-ci.org/75lb/gfmt.svg?branch=master)](https://travis-ci.org/75lb/gfmt)
 [![Dependency Status](https://david-dm.org/75lb/gfmt.svg)](https://david-dm.org/75lb/gfmt)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
 # gfmt
-A use-anywhere, github-flavoured-markdown table generator. Useful in markdown generators or for presenting table data in the terminal. 
+A use-anywhere, github-flavoured-markdown table generator. Useful in markdown generators or for presenting table data in the terminal.
 
 ## Synopsis
 Where `example/simple.json` looks like this:
@@ -33,6 +34,8 @@ produces this output:
 | 13 Jun 2015 | 120       |
 | 14 Jun 2015 | 110       |
 ```
+
+$ cat tmp/repos.json | jq 'map({name, stargazers_count, watchers_count, forks_count, open_issues_count}) | sort_by(.stargazers_count) | reverse' | gfmt
 
 This command, piping cherry-picked fields (see [array-tools](https://github.com/75lb/array-tools)) from a github repo list into `gfmt`:
 ```sh
@@ -75,27 +78,23 @@ $ npm install -g gfmt
 ## API Reference
 A use-anywhere, github-flavoured-markdown table generator.
 
-
-* [gfmt](#module_gfmt)
-  * [GfmTable](#exp_module_gfmt--GfmTable) ⏏
-    * [new GfmTable(input)](#new_module_gfmt--GfmTable_new)
-    * [.getTable()](#module_gfmt--GfmTable+getTable) ⇒ <code>string</code>
-
-<a name="exp_module_gfmt--GfmTable"></a>
-### GfmTable ⏏
-**Kind**: Exported class  
-<a name="new_module_gfmt--GfmTable_new"></a>
-#### new GfmTable(input)
+<a name="exp_module_gfmt--gfmTable"></a>
+### gfmTable(data, [options]) ⏏
 Get a github-flavoured-markdown table instance
 
+**Kind**: Exported function  
 
 | Param | Type | Description |
 | --- | --- | --- |
-| input | <code>object</code> &#124; <code>Array.&lt;object&gt;</code> | the input data |
+| data | <code>object</code> &#124; <code>Array.&lt;object&gt;</code> | the input data |
+| [options] | <code>object</code> |  |
+| [options.columns] | <code>Array.&lt;object&gt;</code> | column definitions |
+| [options.wrap] | <code>boolean</code> | wrap to fit into width |
+| [options.width] | <code>boolean</code> | table width |
 
 **Example**  
 ```js
-> gfmt = require("gfmt");
+> gfmt = require("gfmt")
 > table = gfmt([
     { "date": "10 Jun 2015", "downloads": 100 },
     { "date": "11 Jun 2015", "downloads": 120 },
@@ -112,11 +111,6 @@ Get a github-flavoured-markdown table instance
 | 13 Jun 2015 | 120       |
 | 14 Jun 2015 | 110       |
 ```
-<a name="module_gfmt--GfmTable+getTable"></a>
-#### gfmTable.getTable() ⇒ <code>string</code>
-get the table
-
-**Kind**: instance method of <code>[GfmTable](#exp_module_gfmt--GfmTable)</code>  
 * * *
 
 &copy; 2015 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).

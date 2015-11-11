@@ -1,7 +1,7 @@
 [
     { "name": "Lloyd", "age": null },
     { "name": "Roger", "age": null },
-    { "name": "Amir", "age": null },
-    { "name": "Frank", "age": null },
-    { "name": "Amy", "age": null }
+    { "name": "Amir" },
+    { "name": "Frank" },
+    { "name": "Amy" }
 ]

@@ -1,10 +1,11 @@
 [![view on npm](http://img.shields.io/npm/v/gfmt.svg)](https://www.npmjs.org/package/gfmt)
-[![npm module downloads per month](http://img.shields.io/npm/dm/gfmt.svg)](https://www.npmjs.org/package/gfmt)
+[![npm module downloads](http://img.shields.io/npm/dt/gfmt.svg)](https://www.npmjs.org/package/gfmt)
 [![Build Status](https://travis-ci.org/75lb/gfmt.svg?branch=master)](https://travis-ci.org/75lb/gfmt)
 [![Dependency Status](https://david-dm.org/75lb/gfmt.svg)](https://david-dm.org/75lb/gfmt)
+[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
 # gfmt
-A use-anywhere, github-flavoured-markdown table generator. Useful in markdown generators or for presenting table data in the terminal. 
+A use-anywhere, github-flavoured-markdown table generator. Useful in markdown generators or for presenting table data in the terminal.
 
 ## Synopsis
 Where `example/simple.json` looks like this:
@@ -33,6 +34,8 @@ produces this output:
 | 13 Jun 2015 | 120       |
 | 14 Jun 2015 | 110       |
 ```
+
+$ cat tmp/repos.json | jq 'map({name, stargazers_count, watchers_count, forks_count, open_issues_count}) | sort_by(.stargazers_count) | reverse' | gfmt
 
 This command, piping cherry-picked fields (see [array-tools](https://github.com/75lb/array-tools)) from a github repo list into `gfmt`:
 ```sh
