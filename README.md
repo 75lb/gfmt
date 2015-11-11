@@ -40,27 +40,25 @@ $ cat tmp/repos.json | jq 'map({name, stargazers_count, watchers_count, forks_co
 This command, piping cherry-picked fields (see [array-tools](https://github.com/75lb/array-tools)) from a github repo list into `gfmt`:
 ```sh
 $ curl -s "https://api.github.com/users/jsdoc2md/repos" \
-| array-tools pick name stargazers_count forks_count open_issues_count \
-| array-tools sortBy stargazers_count \
-| array-tools reverse \
+| jq 'map({repo:.name, stars:.stargazers_count, watching:.watchers_count, forks:.forks_count, issues:.open_issues_count}) | sort_by(.stargazers_count) | reverse' \
 | gfmt
 ```
 
 produces this output:
 ```
-| name                    | stargazers_count | forks_count | open_issues_count |
-| ----------------------- | ---------------- | ----------- | ----------------- |
-| jsdoc-to-markdown       | 95               | 12          | 6                 |
-| jsdoc-parse             | 18               | 4           | 1                 |
-| dmd                     | 11               | 10          | 1                 |
-| grunt-jsdoc-to-markdown | 10               | 2           |                   |
-| gulp-jsdoc-to-markdown  | 5                |             |                   |
-| dhtml                   |                  |             |                   |
-| dmd-locale-en-gb        |                  |             |                   |
-| dmd-bitbucket           |                  | 1           |                   |
-| jsdoc                   |                  | 1           |                   |
-| ddata                   |                  | 1           | 1                 |
-| dmd-plugin-example      |                  | 1           |                   |
+| repo                    | stars | watching | forks | issues |
+| ----------------------- | ----- | -------- | ----- | ------ |
+| jsdoc-to-markdown       | 133   | 133      | 20    | 18     |
+| jsdoc-parse             | 26    | 26       | 8     | 4      |
+| jsdoc                   | 0     | 0        | 1     | 0      |
+| gulp-jsdoc-to-markdown  | 6     | 6        | 2     | 0      |
+| grunt-jsdoc-to-markdown | 12    | 12       | 2     | 1      |
+| ddata                   | 0     | 0        | 2     | 2      |
+| dmd-locale-en-gb        | 0     | 0        | 0     | 0      |
+| dmd-bitbucket           | 0     | 0        | 1     | 0      |
+| dmd                     | 13    | 13       | 10    | 5      |
+| dhtml                   | 0     | 0        | 0     | 0      |
+| dmd-plugin-example      | 0     | 0        | 1     | 0      |
 ```
 
 ## Install
@@ -74,6 +72,8 @@ As a command-line tool:
 ```
 $ npm install -g gfmt
 ```
+
+Run `gfmt --help` to see the command-line options. 
 
 ## API Reference
 A use-anywhere, github-flavoured-markdown table generator.
