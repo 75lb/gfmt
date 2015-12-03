@@ -79,7 +79,7 @@ Run `gfmt --help` to see the command-line options.
 A use-anywhere, github-flavoured-markdown table generator.
 
 <a name="exp_module_gfmt--gfmTable"></a>
-### gfmTable(data, [options]) ⏏
+### gfmTable(data, [options]) ⇒ <code>string</code> ⏏
 Get a github-flavoured-markdown table instance
 
 **Kind**: Exported function  
