@@ -17,3 +17,11 @@ test('gmft()', function (t) {
 })
 
 /* test wrap option */
+
+test('escape pipe symbol', function (t) {
+  t.strictEqual(
+    gfmt([ { one: '|..|' }]),
+    '| one            |\n| -------------- |\n| &#124;..&#124; |\n'
+  )
+  t.end()
+})
