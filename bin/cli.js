@@ -27,6 +27,5 @@ process.stdin
     } else {
       return gfmTable(json.data, extend(json.options, gfmOptions))
     }
-
   }))
   .pipe(process.stdout)
