@@ -22,10 +22,10 @@
   },
   "dependencies": {
     "collect-json": "^1.0.6",
-    "column-layout": "^2.0.1",
+    "column-layout": "^2.1.0",
     "command-line-args": "^2.1.6",
     "core-js": "^2.1",
-    "deep-extend": "^0.4.0"
+    "deep-extend": "~0.4.0"
   },
   "scripts": {
     "test": "tape test/*.js",
