@@ -35,9 +35,7 @@ produces this output:
 | 14 Jun 2015 | 110       |
 ```
 
-$ cat tmp/repos.json | jq 'map({name, stargazers_count, watchers_count, forks_count, open_issues_count}) | sort_by(.stargazers_count) | reverse' | gfmt
-
-This command, piping cherry-picked fields (see [array-tools](https://github.com/75lb/array-tools)) from a github repo list into `gfmt`:
+This command pipes cherry-picked fields from a github repo list into `gfmt`:
 ```sh
 $ curl -s "https://api.github.com/users/jsdoc2md/repos" \
 | jq 'map({repo:.name, stars:.stargazers_count, forks:.forks_count, issues:.open_issues_count}) | sort_by(.stargazers_count) | reverse' \
@@ -91,6 +89,7 @@ Get a github-flavoured-markdown table instance
 | [options.columns] | <code>Array.&lt;object&gt;</code> | column definitions |
 | [options.wrap] | <code>boolean</code> | wrap to fit into width |
 | [options.width] | <code>boolean</code> | table width |
+| [options.ignoreEmptyColumns] | <code>boolean</code> | table width |
 
 **Example**  
 ```js
@@ -113,4 +112,4 @@ Get a github-flavoured-markdown table instance
 ```
 * * *
 
-&copy; 2015 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).
+&copy; 2015-16 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).

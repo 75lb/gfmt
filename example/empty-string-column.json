@@ -1,0 +1,12 @@
+{
+    "options": {
+      "ignoreEmptyColumns": true
+    },
+    "data": [
+        { "name": "Lloyd", "age": "" },
+        { "name": "Roger", "age": " " },
+        { "name": "Amir" },
+        { "name": "Frank" },
+        { "name": "Amy" }
+    ]
+}

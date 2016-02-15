@@ -25,3 +25,18 @@ test('escape pipe symbol', function (t) {
   )
   t.end()
 })
+
+test('ignoreEmptyColumns', function (t) {
+  const data = [
+      { "name": "Lloyd", "age": "" },
+      { "name": "Roger", "age": " " },
+      { "name": "Amir" },
+      { "name": "Frank" },
+      { "name": "Amy" }
+  ]
+  t.strictEqual(
+    gfmt(data, { ignoreEmptyColumns: true }),
+    '| name  |\n| ----- |\n| Lloyd |\n| Roger |\n| Amir  |\n| Frank |\n| Amy   |\n'
+  )
+  t.end()
+})
