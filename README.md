@@ -77,6 +77,7 @@ Run `gfmt --help` to see the command-line options.
 A use-anywhere, github-flavoured-markdown table generator.
 
 <a name="exp_module_gfmt--gfmTable"></a>
+
 ### gfmTable(data, [options]) ⇒ <code>string</code> ⏏
 Get a github-flavoured-markdown table instance
 
@@ -113,3 +114,4 @@ Get a github-flavoured-markdown table instance
 * * *
 
 &copy; 2015-16 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).
+

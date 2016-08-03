@@ -1,7 +1,9 @@
-var test = require('tape')
+'use strict'
+var test = require('test-runner')
 var gfmt = require('../')
+var a = require('core-assert')
 
-test('gmft()', function (t) {
+test('gmft()', function () {
   var fixture = require('./fixture/downloads')
   var result = gfmt(fixture)
   var expected =
@@ -12,21 +14,19 @@ test('gmft()', function (t) {
 | 12 Jun 2015 | 150       |\n\
 | 13 Jun 2015 | 120       |\n\
 | 14 Jun 2015 | 110       |\n'
-  t.strictEqual(result, expected)
-  t.end()
+  a.strictEqual(result, expected)
 })
 
 /* test wrap option */
 
-test('escape pipe symbol', function (t) {
-  t.strictEqual(
+test('escape pipe symbol', function () {
+  a.strictEqual(
     gfmt([ { one: '|..|' }]),
     '| one            |\n| -------------- |\n| &#124;..&#124; |\n'
   )
-  t.end()
 })
 
-test('ignoreEmptyColumns', function (t) {
+test('ignoreEmptyColumns', function () {
   const data = [
       { "name": "Lloyd", "age": "" },
       { "name": "Roger", "age": " " },
@@ -34,9 +34,8 @@ test('ignoreEmptyColumns', function (t) {
       { "name": "Frank" },
       { "name": "Amy" }
   ]
-  t.strictEqual(
+  a.strictEqual(
     gfmt(data, { ignoreEmptyColumns: true }),
     '| name  |\n| ----- |\n| Lloyd |\n| Roger |\n| Amir  |\n| Frank |\n| Amy   |\n'
   )
-  t.end()
 })
