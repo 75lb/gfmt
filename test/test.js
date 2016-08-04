@@ -27,7 +27,7 @@ test('escape pipe symbol', function () {
 })
 
 test('ignoreEmptyColumns', function () {
-  const data = [
+  var data = [
       { "name": "Lloyd", "age": "" },
       { "name": "Roger", "age": " " },
       { "name": "Amir" },
