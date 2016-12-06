@@ -22,18 +22,18 @@
   },
   "dependencies": {
     "collect-json": "^1.0.8",
-    "command-line-tool": "~0.6.2",
+    "command-line-tool": "~0.6.4",
     "core-js": "^2.4.1",
     "deep-extend": "~0.4.1",
-    "table-layout": "~0.2.2"
+    "table-layout": "~0.3.0"
   },
   "scripts": {
     "test": "test-runner test/*.js",
     "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
   },
   "devDependencies": {
-    "core-assert": "^0.2.0",
-    "jsdoc-to-markdown": "^2.0.0-alpha",
-    "test-runner": "~0.1.9"
+    "core-assert": "^0.2.1",
+    "jsdoc-to-markdown": "^2.0.1",
+    "test-runner": "~0.3.0"
   }
 }

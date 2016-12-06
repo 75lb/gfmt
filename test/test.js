@@ -1,9 +1,11 @@
 'use strict'
-var test = require('test-runner')
+var TestRunner = require('test-runner')
 var gfmt = require('../')
 var a = require('core-assert')
 
-test('gmft()', function () {
+var runner = new TestRunner()
+
+runner.test('gmft()', function () {
   var fixture = require('./fixture/downloads')
   var result = gfmt(fixture)
   var expected =
@@ -19,14 +21,14 @@ test('gmft()', function () {
 
 /* test wrap option */
 
-test('escape pipe symbol', function () {
+runner.test('escape pipe symbol', function () {
   a.strictEqual(
     gfmt([ { one: '|..|' }]),
     '| one            |\n| -------------- |\n| &#124;..&#124; |\n'
   )
 })
 
-test('ignoreEmptyColumns', function () {
+runner.test('ignoreEmptyColumns', function () {
   var data = [
       { "name": "Lloyd", "age": "" },
       { "name": "Roger", "age": " " },

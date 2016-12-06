@@ -114,4 +114,3 @@ Get a github-flavoured-markdown table instance
 * * *
 
 &copy; 2015-16 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).
-
