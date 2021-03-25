@@ -32,5 +32,8 @@
   "devDependencies": {
     "jsdoc-to-markdown": "^7.0.1",
     "test-runner": "~0.8.14"
-  }
+  },
+  "files": [
+    "index.mjs"
+  ]
 }
