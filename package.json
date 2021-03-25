@@ -5,9 +5,9 @@
   "description": "A use-anywhere, github-flavoured-markdown table generator. Useful in markdown generators or for presenting table data in the terminal.",
   "repository": "https://github.com/75lb/gfmt.git",
   "license": "MIT",
-  "main": "./lib/gfmt.js",
+  "main": "index.mjs",
   "bin": {
-    "gfmt": "bin/cli.js"
+    "gfmt": "bin/cli.mjs"
   },
   "keywords": [
     "github",
@@ -18,22 +18,19 @@
     "ascii"
   ],
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=14"
   },
   "dependencies": {
     "collect-json": "^1.0.8",
-    "command-line-tool": "~0.6.4",
-    "core-js": "^2.4.1",
-    "deep-extend": "~0.4.1",
-    "table-layout": "~0.3.0"
+    "command-line-args": "^5.1.1",
+    "table-layout": "~2.1.0"
   },
   "scripts": {
-    "test": "test-runner test/*.js",
-    "docs": "jsdoc2md -t jsdoc2md/README.hbs lib/*.js > README.md; echo"
+    "test": "test-runner test/*.mjs",
+    "docs": "jsdoc2md -c jsdoc.conf -t README.hbs index.mjs > README.md"
   },
   "devDependencies": {
-    "core-assert": "^0.2.1",
-    "jsdoc-to-markdown": "^2.0.1",
-    "test-runner": "~0.3.0"
+    "jsdoc-to-markdown": "^7.0.1",
+    "test-runner": "~0.8.14"
   }
 }

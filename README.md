@@ -1,13 +1,16 @@
-[![view on npm](http://img.shields.io/npm/v/gfmt.svg)](https://www.npmjs.org/package/gfmt)
-[![npm module downloads](http://img.shields.io/npm/dt/gfmt.svg)](https://www.npmjs.org/package/gfmt)
+[![view on npm](https://badgen.net/npm/v/gfmt)](https://www.npmjs.org/package/gfmt)
+[![npm module downloads](https://badgen.net/npm/dt/gfmt)](https://www.npmjs.org/package/gfmt)
+[![Gihub repo dependents](https://badgen.net/github/dependents-repo/75lb/gfmt)](https://github.com/75lb/gfmt/network/dependents?dependent_type=REPOSITORY)
+[![Gihub package dependents](https://badgen.net/github/dependents-pkg/75lb/gfmt)](https://github.com/75lb/gfmt/network/dependents?dependent_type=PACKAGE)
 [![Build Status](https://travis-ci.org/75lb/gfmt.svg?branch=master)](https://travis-ci.org/75lb/gfmt)
-[![Dependency Status](https://david-dm.org/75lb/gfmt.svg)](https://david-dm.org/75lb/gfmt)
 [![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](https://github.com/feross/standard)
 
 # gfmt
+
 A use-anywhere, github-flavoured-markdown table generator. Useful in markdown generators or for presenting table data in the terminal.
 
 ## Synopsis
+
 Where `example/simple.json` looks like this:
 ```
 [
@@ -60,6 +63,7 @@ produces this output:
 ```
 
 ## Install
+
 As a library:
 
 ```
@@ -74,6 +78,7 @@ $ npm install -g gfmt
 Run `gfmt --help` to see the command-line options.
 
 ## API Reference
+
 A use-anywhere, github-flavoured-markdown table generator.
 
 <a name="exp_module_gfmt--gfmTable"></a>
@@ -81,7 +86,7 @@ A use-anywhere, github-flavoured-markdown table generator.
 ### gfmTable(data, [options]) ⇒ <code>string</code> ⏏
 Get a github-flavoured-markdown table instance
 
-**Kind**: Exported function  
+**Kind**: Exported function
 
 | Param | Type | Description |
 | --- | --- | --- |
@@ -92,7 +97,7 @@ Get a github-flavoured-markdown table instance
 | [options.width] | <code>boolean</code> | table width |
 | [options.ignoreEmptyColumns] | <code>boolean</code> | table width |
 
-**Example**  
+**Example**
 ```js
 > gfmt = require("gfmt")
 > table = gfmt([
@@ -113,4 +118,4 @@ Get a github-flavoured-markdown table instance
 ```
 * * *
 
-&copy; 2015-16 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown). 
+&copy; 2015-21 Lloyd Brookes \<75pound@gmail.com\>. Documented by [jsdoc-to-markdown](https://github.com/jsdoc2md/jsdoc-to-markdown).

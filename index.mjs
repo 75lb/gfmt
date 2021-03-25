@@ -1,13 +1,9 @@
-'use strict'
-if (!Array.prototype.find) require('core-js/es6/array')
-if (!String.prototype.repeat) require('core-js/es6/string')
-var Table = require('table-layout')
+import Table from 'table-layout'
 
 /**
  * A use-anywhere, github-flavoured-markdown table generator.
  * @module gfmt
  */
-module.exports = gfmTable
 
 /**
  * Get a github-flavoured-markdown table instance
@@ -46,7 +42,7 @@ function gfmTable (data, options) {
 
   data = escapePipes(data)
 
-  var tableOptions = {
+  const tableOptions = {
     nowrap: !options.wrap,
     padding: { left: '| ', right: ' ' },
     columns: options.columns || [],
@@ -60,14 +56,14 @@ function gfmTable (data, options) {
 
   if (options.width) tableOptions.viewWidth = options.width
 
-  var headerRow = {}
-  var separatorRow = {}
+  const headerRow = {}
+  const separatorRow = {}
 
-  var table = new Table(data, tableOptions)
+  const table = new Table(data, tableOptions)
 
   table.columns.list
     .forEach(function (column) {
-      var optionColumn = tableOptions.getColumn(column.name)
+      const optionColumn = tableOptions.getColumn(column.name)
       headerRow[column.name] = (optionColumn && optionColumn.header) || column.name
       separatorRow[column.name] = function () {
         return '-'.repeat(this.wrappedContentWidth)
@@ -77,7 +73,7 @@ function gfmTable (data, options) {
   data.splice(0, 0, headerRow, separatorRow)
   table.load(data)
 
-  var lastColumn = table.columns.list[table.columns.list.length - 1]
+  const lastColumn = table.columns.list[table.columns.list.length - 1]
   lastColumn.padding = { left: '| ', right: ' |' }
 
   return table.toString()
@@ -93,3 +89,5 @@ function escapePipes (array) {
     return row
   })
 }
+
+export default gfmTable
