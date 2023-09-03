@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import gfmTable from '../index.mjs'
-import collectJson from 'collect-json'
+import streamReadAll from 'stream-read-all'
 import commandLineArgs from 'command-line-args'
 
 const optionDefinitions = [
@@ -12,18 +12,20 @@ const optionDefinitions = [
   }
 ]
 
-const options = commandLineArgs(optionDefinitions)
+async function getTable () {
+  const options = commandLineArgs(optionDefinitions)
+  const input = await streamReadAll(process.stdin)
+  const json = JSON.parse(input)
+  const gfmOptions = {
+    wrap: options.wrap
+  }
+  if (Array.isArray(json)) {
+    return gfmTable(json, gfmOptions)
+  } else {
+    Object.assign(gfmOptions, json.options)
+    return gfmTable(json.data, gfmOptions)
+  }
+}
 
-process.stdin
-  .pipe(collectJson(function (json) {
-    const gfmOptions = {
-      wrap: options.wrap
-    }
-    if (Array.isArray(json)) {
-      return gfmTable(json, gfmOptions)
-    } else {
-      Object.assign(gfmOptions, json.options)
-      return gfmTable(json.data, gfmOptions)
-    }
-  }))
-  .pipe(process.stdout)
+const output = await getTable()
+console.log(output)

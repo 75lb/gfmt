@@ -58,17 +58,18 @@ function gfmTable (data, options) {
 
   const headerRow = {}
   const separatorRow = {}
-
+  // tableOptions.columns.push({
+  //   name: 'headerBorder',
+  //   get: (cell, column) => '-'.repeat(column.wrappedContentWidth)
+  // })
   const table = new Table(data, tableOptions)
 
-  table.columns.list
-    .forEach(function (column) {
-      const optionColumn = tableOptions.getColumn(column.name)
-      headerRow[column.name] = (optionColumn && optionColumn.header) || column.name
-      separatorRow[column.name] = function () {
-        return '-'.repeat(this.wrappedContentWidth)
-      }
-    })
+  for (const column of table.columns.list) {
+    const optionColumn = tableOptions.getColumn(column.name)
+    console.log(optionColumn)
+    headerRow[column.name] = (optionColumn && optionColumn.header) || column.name
+    separatorRow[column.name] = '-'.repeat(3)
+  }
 
   data.splice(0, 0, headerRow, separatorRow)
   table.load(data)
