@@ -43,7 +43,7 @@ function gfmTable (data, options) {
   data = escapePipes(data)
 
   const tableOptions = {
-    nowrap: !options.wrap,
+    noWrap: !options.wrap,
     padding: { left: '| ', right: ' ' },
     columns: options.columns || [],
     getColumn: function (columnName) {
@@ -58,15 +58,10 @@ function gfmTable (data, options) {
 
   const headerRow = {}
   const separatorRow = {}
-  // tableOptions.columns.push({
-  //   name: 'headerBorder',
-  //   get: (cell, column) => '-'.repeat(column.wrappedContentWidth)
-  // })
   const table = new Table(data, tableOptions)
 
   for (const column of table.columns.list) {
     const optionColumn = tableOptions.getColumn(column.name)
-    console.log(optionColumn)
     headerRow[column.name] = (optionColumn && optionColumn.header) || column.name
     separatorRow[column.name] = '-'.repeat(3)
   }

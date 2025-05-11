@@ -1,13 +1,17 @@
 {
   "name": "gfmt",
-  "author": "Lloyd Brookes <75pound@gmail.com>",
+  "author": "Lloyd Brookes <opensource@75lb.com> (http://75lb.com)",
   "version": "2.0.1",
   "description": "A use-anywhere, github-flavoured-markdown table generator. Useful in markdown generators or for presenting table data in the terminal.",
-  "repository": "https://github.com/75lb/gfmt.git",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/75lb/.git"
+  },
   "license": "MIT",
-  "main": "index.mjs",
+  "type": "module",
+  "exports": "./index.js",
   "bin": {
-    "gfmt": "bin/cli.mjs"
+    "gfmt": "bin/cli.js"
   },
   "keywords": [
     "github",
@@ -21,19 +25,20 @@
     "node": ">=14"
   },
   "dependencies": {
-    "command-line-args": "^5.2.0",
-    "stream-read-all": "^3.0.1",
-    "table-layout": "~3.0.0"
+    "command-line-args": "^6.0.1",
+    "stream-read-all": "^5.0.2",
+    "table-layout": "~4.1.1"
   },
   "scripts": {
-    "test": "test-runner test/*.mjs",
-    "docs": "jsdoc2md -c jsdoc.conf -t README.hbs index.mjs > README.md"
+    "test": "test-runner test/*.js",
+    "docs": "jsdoc2md -t README.hbs index.js > README.md"
   },
   "devDependencies": {
-    "jsdoc-to-markdown": "^7.0.1",
-    "test-runner": "~0.9.8"
+    "jsdoc-to-markdown": "^9.1.1",
+    "test-runner": "~0.11.1"
   },
   "files": [
-    "index.mjs"
+    "index.js",
+    "bin"
   ]
 }

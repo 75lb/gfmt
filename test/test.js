@@ -1,6 +1,6 @@
 import TestRunner from 'test-runner'
 import assert from 'assert'
-import gfmt from '../index.mjs'
+import gfmt from 'gfmt'
 
 const a = assert.strict
 const tom = new TestRunner.Tom()
@@ -17,7 +17,7 @@ tom.test('gmft()', function () {
   const result = gfmt(fixture)
   const expected =
 `| date        | downloads |
-| ----------- | --------- |
+| ---         | ---       |
 | 10 Jun 2015 | 100       |
 | 11 Jun 2015 | 120       |
 | 12 Jun 2015 | 150       |
@@ -32,7 +32,7 @@ tom.test('gmft()', function () {
 tom.test('escape pipe symbol', function () {
   a.strictEqual(
     gfmt([{ one: '|..|' }]),
-    '| one            |\n| -------------- |\n| &#124;..&#124; |\n'
+    '| one            |\n| ---            |\n| &#124;..&#124; |\n'
   )
 })
 
@@ -46,7 +46,7 @@ tom.test('ignoreEmptyColumns', function () {
   ]
   a.strictEqual(
     gfmt(data, { ignoreEmptyColumns: true }),
-    '| name  |\n| ----- |\n| Lloyd |\n| Roger |\n| Amir  |\n| Frank |\n| Amy   |\n'
+    '| name  |\n| ---   |\n| Lloyd |\n| Roger |\n| Amir  |\n| Frank |\n| Amy   |\n'
   )
 })
 
