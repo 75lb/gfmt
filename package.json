@@ -1,7 +1,7 @@
 {
   "name": "gfmt",
   "author": "Lloyd Brookes <opensource@75lb.com> (http://75lb.com)",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "A use-anywhere, github-flavoured-markdown table generator. Useful in markdown generators or for presenting table data in the terminal.",
   "repository": {
     "type": "git",
