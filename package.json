@@ -5,7 +5,7 @@
   "description": "A use-anywhere, github-flavoured-markdown table generator. Useful in markdown generators or for presenting table data in the terminal.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/75lb/.git"
+    "url": "git+https://github.com/75lb/gfmt.git"
   },
   "license": "MIT",
   "type": "module",
